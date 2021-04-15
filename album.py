@@ -1,4 +1,5 @@
 class Album:
+    id = 0
     title = ''
     genre= ''
     artist = ''
@@ -8,7 +9,10 @@ class Album:
     related_artist = ''
     record_label = ''
 
-    def __init__(self, title, genre, artist, release_year, price, album_art, related_artist, record_label):
+    songs = []
+
+    def __init__(self, id, title, genre, artist, release_year, price, album_art, related_artist, record_label):
+        self.id = id
         self.title = title
         self.genre = genre
         self.artist = artist
@@ -21,3 +25,6 @@ class Album:
 
     def __str__(self):
         return self.title + "|" +  self.artist
+
+    def add_song(self, song):
+        self.songs.append(song)
